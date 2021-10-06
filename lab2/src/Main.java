@@ -3,33 +3,24 @@ import exceptions.MyArraySizeException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static final int ROWS = 4;
+    public static final int COLUMNS = 4;
 
+
+    public static void main(String[] args) {
         MyArrays MyArrays = new MyArrays();
 
-        String[][] correctArray = new String[][] {
+        String[][] array = new String[][] {
                 {"1", "2", "3", "4"},
                 {"1", "2", "3", "4"},
                 {"1", "2", "3", "4"},
-                {"1", "2", "3", "4"}
-        };
-
-        String[][] incorrectArray = new String[][] {
-                {"1", "2", "3", "4"},
-                {"1", "2", "3", "4"},
-                {"1", "c", "3", "4"},
-                {"1", "2", "3", "4"},
-                {"1", "2", "3", "b"}
+                {"1", "b", "3", "4"}
         };
 
         try {
-            System.out.println(MyArrays.getArrayElementsSum(incorrectArray));
+            System.out.println(MyArrays.getArrayElementsSum(array));
         } catch (MyArrayDataException e) {
             e.printStackTrace();
-        }
-
-        try {
-            MyArrays.arraySizeCheck(correctArray);
         } catch (MyArraySizeException e) {
             e.printStackTrace();
         }
